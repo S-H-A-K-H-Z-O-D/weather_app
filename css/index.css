@@ -45,9 +45,8 @@ img {
 .form {
   position: relative;
   z-index: 0;
-  margin: 35px;
+  margin-top: 35px;
   margin-bottom: 90px;
-  padding: 0;
   width: 100%;
 }
 

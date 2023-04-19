@@ -65,10 +65,13 @@ let getWeather = async (lat, lon) =>{
 
 
 let  onSearch = debounce(async (evt) => {
+
+     elCitiesList.innerHTML = null;
+
      if(evt.target.value){
           let cities = await request(`/geo/1.0/direct?q=${evt.target.value}&limit=5&appid=${API_KEY}`);
-          
-          elCitiesList.innerHTML = null;
+
+          elInput.classList.add('form__input__js');
 
           cities.forEach(city => {
                
@@ -81,7 +84,7 @@ let  onSearch = debounce(async (evt) => {
           });
           
      }else {
-          elCitiesList.innerHTML = null;
+          elInput.classList.remove('form__input__js');
      }
 }, 500);
 
